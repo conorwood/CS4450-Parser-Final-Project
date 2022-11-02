@@ -1,5 +1,7 @@
 # CS4450-Parser-Final-Project
 
 ## Group Members
-Michael Dillahunty, Sawyer Seitz, Conor Wood
+i. Michael Dillahunty
+ii. Sawyer Seitz
+iii. Conor Wood
 
