@@ -1,4 +1,4 @@
-// Generated from C:/Users/Conor Wood/Documents/4450 Parser/SimpleAntlrMavenProject/parser/src\g.g4 by ANTLR 4.10.1
+// Generated from /Users/dillahuntym/Documents/Fall_2022/CS4450-PoPL/CS4450-Parser-Final-Project/src/g.g4 by ANTLR 4.10.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -7,23 +7,13 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface gListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link gParser#init}.
+	 * Enter a parse tree produced by {@link gParser#addition_operator}.
 	 * @param ctx the parse tree
 	 */
-	void enterInit(gParser.InitContext ctx);
+	void enterAddition_operator(gParser.Addition_operatorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link gParser#init}.
+	 * Exit a parse tree produced by {@link gParser#addition_operator}.
 	 * @param ctx the parse tree
 	 */
-	void exitInit(gParser.InitContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link gParser#value}.
-	 * @param ctx the parse tree
-	 */
-	void enterValue(gParser.ValueContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link gParser#value}.
-	 * @param ctx the parse tree
-	 */
-	void exitValue(gParser.ValueContext ctx);
+	void exitAddition_operator(gParser.Addition_operatorContext ctx);
 }

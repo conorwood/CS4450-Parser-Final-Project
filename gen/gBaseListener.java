@@ -1,4 +1,4 @@
-// Generated from C:/Users/Conor Wood/Documents/4450 Parser/SimpleAntlrMavenProject/parser/src\g.g4 by ANTLR 4.10.1
+// Generated from /Users/dillahuntym/Documents/Fall_2022/CS4450-PoPL/CS4450-Parser-Final-Project/src/g.g4 by ANTLR 4.10.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -15,25 +15,13 @@ public class gBaseListener implements gListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInit(gParser.InitContext ctx) { }
+	@Override public void enterAddition_operator(gParser.Addition_operatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInit(gParser.InitContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterValue(gParser.ValueContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitValue(gParser.ValueContext ctx) { }
+	@Override public void exitAddition_operator(gParser.Addition_operatorContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
