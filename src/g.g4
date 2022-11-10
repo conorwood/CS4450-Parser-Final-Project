@@ -7,7 +7,7 @@ grammar g;
 //value : init
 //      | INT
 //      ;
-//add : INT '+' INT;
+addition_operator : INT '+' INT;
 // parser rules start with lowercase letters, lexer rules with uppercase
 INT :   [0-9]+ ;             // Define token INT as one or more digits
 WS  :   [ \t\r\n]+ -> skip ; // Define whitespace rule, toss it out
