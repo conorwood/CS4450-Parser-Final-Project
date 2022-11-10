@@ -1,4 +1,4 @@
-// Generated from C:/Users/Conor Wood/Documents/4450 Parser/SimpleAntlrMavenProject/parser/src\g.g4 by ANTLR 4.10.1
+// Generated from /Users/dillahuntym/Documents/Fall_2022/CS4450-PoPL/CS4450-Parser-Final-Project/src/g.g4 by ANTLR 4.10.1
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -16,12 +16,5 @@ public class gBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements gVis
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitInit(gParser.InitContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitValue(gParser.ValueContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAddition_operator(gParser.Addition_operatorContext ctx) { return visitChildren(ctx); }
 }

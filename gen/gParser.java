@@ -1,4 +1,4 @@
-// Generated from C:/Users/Conor Wood/Documents/4450 Parser/SimpleAntlrMavenProject/parser/src\g.g4 by ANTLR 4.10.1
+// Generated from /Users/dillahuntym/Documents/Fall_2022/CS4450-PoPL/CS4450-Parser-Final-Project/src/g.g4 by ANTLR 4.10.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -16,25 +16,28 @@ public class gParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, INT=4, WS=5;
+		INT=1, WS=2, PLUS=3, MINUS=4, MULTIPLY=5, DIVIDE=6, EQUAL=7, PLUS_EQUAL=8, 
+		MINUS_EQUAL=9, MULTI_EQUAL=10, EQUAL_EQUAL=11, DIVIDE_EQUAL=12, MOD_EQUAL=13;
 	public static final int
-		RULE_init = 0, RULE_value = 1;
+		RULE_addition_operator = 0;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"init", "value"
+			"addition_operator"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'{'", "','", "'}'"
+			null, null, null, "'+'", "'-'", "'*'", "'/'", "'='", "'+='", "'-='", 
+			"'*='", "'=='", "'/='", "'%='"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, "INT", "WS"
+			null, "INT", "WS", "PLUS", "MINUS", "MULTIPLY", "DIVIDE", "EQUAL", "PLUS_EQUAL", 
+			"MINUS_EQUAL", "MULTI_EQUAL", "EQUAL_EQUAL", "DIVIDE_EQUAL", "MOD_EQUAL"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -88,121 +91,43 @@ public class gParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
-	public static class InitContext extends ParserRuleContext {
-		public List<ValueContext> value() {
-			return getRuleContexts(ValueContext.class);
+	public static class Addition_operatorContext extends ParserRuleContext {
+		public List<TerminalNode> INT() { return getTokens(gParser.INT); }
+		public TerminalNode INT(int i) {
+			return getToken(gParser.INT, i);
 		}
-		public ValueContext value(int i) {
-			return getRuleContext(ValueContext.class,i);
-		}
-		public InitContext(ParserRuleContext parent, int invokingState) {
+		public TerminalNode PLUS() { return getToken(gParser.PLUS, 0); }
+		public Addition_operatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_init; }
+		@Override public int getRuleIndex() { return RULE_addition_operator; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof gListener ) ((gListener)listener).enterInit(this);
+			if ( listener instanceof gListener ) ((gListener)listener).enterAddition_operator(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof gListener ) ((gListener)listener).exitInit(this);
+			if ( listener instanceof gListener ) ((gListener)listener).exitAddition_operator(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof gVisitor ) return ((gVisitor<? extends T>)visitor).visitInit(this);
+			if ( visitor instanceof gVisitor ) return ((gVisitor<? extends T>)visitor).visitAddition_operator(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final InitContext init() throws RecognitionException {
-		InitContext _localctx = new InitContext(_ctx, getState());
-		enterRule(_localctx, 0, RULE_init);
-		int _la;
+	public final Addition_operatorContext addition_operator() throws RecognitionException {
+		Addition_operatorContext _localctx = new Addition_operatorContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_addition_operator);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
+			setState(2);
+			match(INT);
+			setState(3);
+			match(PLUS);
 			setState(4);
-			match(T__0);
-			setState(5);
-			value();
-			setState(10);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==T__1) {
-				{
-				{
-				setState(6);
-				match(T__1);
-				setState(7);
-				value();
-				}
-				}
-				setState(12);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(13);
-			match(T__2);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ValueContext extends ParserRuleContext {
-		public InitContext init() {
-			return getRuleContext(InitContext.class,0);
-		}
-		public TerminalNode INT() { return getToken(gParser.INT, 0); }
-		public ValueContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_value; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof gListener ) ((gListener)listener).enterValue(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof gListener ) ((gListener)listener).exitValue(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof gVisitor ) return ((gVisitor<? extends T>)visitor).visitValue(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final ValueContext value() throws RecognitionException {
-		ValueContext _localctx = new ValueContext(_ctx, getState());
-		enterRule(_localctx, 2, RULE_value);
-		try {
-			setState(17);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case T__0:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(15);
-				init();
-				}
-				break;
-			case INT:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(16);
-				match(INT);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+			match(INT);
 			}
 		}
 		catch (RecognitionException re) {
@@ -217,20 +142,11 @@ public class gParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0005\u0014\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
-		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0005\u0000\t\b\u0000"+
-		"\n\u0000\f\u0000\f\t\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001"+
-		"\u0003\u0001\u0012\b\u0001\u0001\u0001\u0000\u0000\u0002\u0000\u0002\u0000"+
-		"\u0000\u0013\u0000\u0004\u0001\u0000\u0000\u0000\u0002\u0011\u0001\u0000"+
-		"\u0000\u0000\u0004\u0005\u0005\u0001\u0000\u0000\u0005\n\u0003\u0002\u0001"+
-		"\u0000\u0006\u0007\u0005\u0002\u0000\u0000\u0007\t\u0003\u0002\u0001\u0000"+
-		"\b\u0006\u0001\u0000\u0000\u0000\t\f\u0001\u0000\u0000\u0000\n\b\u0001"+
-		"\u0000\u0000\u0000\n\u000b\u0001\u0000\u0000\u0000\u000b\r\u0001\u0000"+
-		"\u0000\u0000\f\n\u0001\u0000\u0000\u0000\r\u000e\u0005\u0003\u0000\u0000"+
-		"\u000e\u0001\u0001\u0000\u0000\u0000\u000f\u0012\u0003\u0000\u0000\u0000"+
-		"\u0010\u0012\u0005\u0004\u0000\u0000\u0011\u000f\u0001\u0000\u0000\u0000"+
-		"\u0011\u0010\u0001\u0000\u0000\u0000\u0012\u0003\u0001\u0000\u0000\u0000"+
-		"\u0002\n\u0011";
+		"\u0004\u0001\r\u0007\u0002\u0000\u0007\u0000\u0001\u0000\u0001\u0000\u0001"+
+		"\u0000\u0001\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0005"+
+		"\u0000\u0002\u0001\u0000\u0000\u0000\u0002\u0003\u0005\u0001\u0000\u0000"+
+		"\u0003\u0004\u0005\u0003\u0000\u0000\u0004\u0005\u0005\u0001\u0000\u0000"+
+		"\u0005\u0001\u0001\u0000\u0000\u0000\u0000";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
