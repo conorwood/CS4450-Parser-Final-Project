@@ -7,25 +7,6 @@ arithmetic_operations : '(' arithmetic_operations ')'
                       | NUM
                       ;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /** A rule called init that matches comma-separated values between {...}. */
 //init  : '{' value (',' value)* '}' ;  // must match at least one value
 
