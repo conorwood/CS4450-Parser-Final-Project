@@ -1,5 +1,31 @@
 grammar g;
 
+// Arithmetic operations rule, allowing parentheses and following order of operations (PEMDAS)
+arithmetic_operations : '(' arithmetic_operations ')'
+                      | arithmetic_operations (MULTIPLY|DIVIDE|MOD) arithmetic_operations
+                      | arithmetic_operations (PLUS|MINUS) arithmetic_operations
+                      | NUM
+                      ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /** A rule called init that matches comma-separated values between {...}. */
 //init  : '{' value (',' value)* '}' ;  // must match at least one value
 
