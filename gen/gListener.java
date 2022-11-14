@@ -7,13 +7,23 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface gListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link gParser#addition_operator}.
+	 * Enter a parse tree produced by {@link gParser#arithmetic_operations}.
 	 * @param ctx the parse tree
 	 */
-	void enterAddition_operator(gParser.Addition_operatorContext ctx);
+	void enterArithmetic_operations(gParser.Arithmetic_operationsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link gParser#addition_operator}.
+	 * Exit a parse tree produced by {@link gParser#arithmetic_operations}.
 	 * @param ctx the parse tree
 	 */
-	void exitAddition_operator(gParser.Addition_operatorContext ctx);
+	void exitArithmetic_operations(gParser.Arithmetic_operationsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link gParser#assignment_operations}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignment_operations(gParser.Assignment_operationsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link gParser#assignment_operations}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignment_operations(gParser.Assignment_operationsContext ctx);
 }

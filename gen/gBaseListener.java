@@ -15,13 +15,25 @@ public class gBaseListener implements gListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAddition_operator(gParser.Addition_operatorContext ctx) { }
+	@Override public void enterArithmetic_operations(gParser.Arithmetic_operationsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAddition_operator(gParser.Addition_operatorContext ctx) { }
+	@Override public void exitArithmetic_operations(gParser.Arithmetic_operationsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAssignment_operations(gParser.Assignment_operationsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAssignment_operations(gParser.Assignment_operationsContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

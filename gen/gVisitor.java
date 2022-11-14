@@ -10,9 +10,15 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface gVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link gParser#addition_operator}.
+	 * Visit a parse tree produced by {@link gParser#arithmetic_operations}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAddition_operator(gParser.Addition_operatorContext ctx);
+	T visitArithmetic_operations(gParser.Arithmetic_operationsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link gParser#assignment_operations}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignment_operations(gParser.Assignment_operationsContext ctx);
 }
