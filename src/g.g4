@@ -5,6 +5,7 @@ arithmetic_operations : '(' arithmetic_operations ')'
                       | arithmetic_operations (MULTIPLY|DIVIDE|MOD) arithmetic_operations
                       | arithmetic_operations (PLUS|MINUS) arithmetic_operations
                       | NUM
+                      | VAR_NAME
                       ;
 
 NUM : [-]?[0-9]*[.]*[0-9]+ ; // Define token INT as one or more digits
@@ -28,6 +29,7 @@ PLUS : '+';
 MINUS : '-';
 MULTIPLY : '*';
 DIVIDE : '/';
+MOD : '%';
 
 /* Assignment Operators */
 ASSIGN : '=';
