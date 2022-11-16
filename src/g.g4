@@ -31,6 +31,18 @@ assignment_operations : '(' (assignment_operations | arithmetic_operations) ')'
                       | STRING
                       ;
 
+
+conditional_statements : '(' (conditional_statements | conditional_statements) ')'
+                       | conditional_statements (EQUAL_EQUAL | DOESNOT_EQUAL) conditional_statements
+                       | conditional_statements (LESS_THAN | LESS_THAN_EQUAL) conditional_statements
+                       | conditional_statements (GREATER_THAN | GREATER_THAN_EQUAL) conditional_statements
+                       | conditional_statements (OR | AND) conditional_statements
+                       | VAR_NAME
+                       | FLOAT
+                       | INT
+                       | NUM
+                       | STRING
+                       ;
 /*
     assign_operator: VAR_NAME ASSIGN (VAR_NAME | INT | STRING | FLOAT | BOOL);
     plus_equal_operator: (VAR_NAME | INT | FLOAT) PLUS_EQUAL (VAR_NAME | INT | FLOAT);
@@ -63,8 +75,14 @@ DIVIDE_EQUAL : '/=';
 MOD_EQUAL : '%=';
 
 /* These 2 aren't due yet for this deliverable */
-//EQUAL_EQUAL : '==';
-//DOESNOT_EQUAL : '!=';
+EQUAL_EQUAL : '==';
+DOESNOT_EQUAL : '!=';
+LESS_THAN : '<';
+LESS_THAN_EQUAL : '<=';
+GREATER_THAN : '>';
+GREATER_THAN_EQUAL : '>=';
+AND : 'and';
+OR : 'or';
 
 /* Variable Names */
 VAR_NAME: [a-zA-Z_] [a-zA-Z_0-9]*;
