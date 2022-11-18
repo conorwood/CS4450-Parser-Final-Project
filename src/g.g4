@@ -9,6 +9,7 @@ arithmetic_operations : '(' arithmetic_operations ')'
                       ;
 
 WS  :   [ \t\r\n]+ -> skip ; // Define whitespace rule, toss it out
+TAB : '   '; // tab is 3 spaces
 NUM : [-]?[0-9]*[.]*[0-9]+ ; // Define token INT as one or more digits
 INT : [0-9]+;
 FLOAT : INT+ '.' INT*;
@@ -32,7 +33,7 @@ assignment_operations : '(' (assignment_operations | arithmetic_operations) ')'
                       ;
 
 
-conditional_statements : '(' (conditional_statements | conditional_statements) ')'
+conditional_statements :
                        | conditional_statements (EQUAL_EQUAL | DOESNOT_EQUAL) conditional_statements
                        | conditional_statements (LESS_THAN | LESS_THAN_EQUAL) conditional_statements
                        | conditional_statements (GREATER_THAN | GREATER_THAN_EQUAL) conditional_statements
@@ -43,18 +44,18 @@ conditional_statements : '(' (conditional_statements | conditional_statements) '
                        | NUM
                        | STRING
                        ;
-/*
-    assign_operator: VAR_NAME ASSIGN (VAR_NAME | INT | STRING | FLOAT | BOOL);
-    plus_equal_operator: (VAR_NAME | INT | FLOAT) PLUS_EQUAL (VAR_NAME | INT | FLOAT);
-    minus_equal_operator: (VAR_NAME | INT | FLOAT) MINUS_EQUAL (VAR_NAME | INT | FLOAT);
-    multi_equal_operator: (VAR_NAME | INT | FLOAT | BOOL) MULTI_EQUAL (VAR_NAME | INT | FLOAT | BOOL);
-    divide_equal_op : (VAR_NAME | INT | FLOAT) DIVIDE_EQUAL (VAR_NAME | INT | FLOAT);
-    mod_equal_op : (VAR_NAME | INT | FLOAT) MOD_EQUAL (VAR_NAME | INT | FLOAT);
-    */
-/**
-    NOT NEEDED YET FOR THIS DELIVERABLE
-    equal_equal_op : (VAR_NAME | INT | FLOAT | BOOL) EQUAL_EQUAL (VAR_NAME | INT | FLOAT | BOOL);
-    */
+
+
+if_else_block : '(' (if_else_block | if_else_block) ')'
+              | IF (VAR_NAME | NUM | INT | FLOAT | BOOL) (conditional_statements | assignment_operations | ASSIGN | COLON) (VAR_NAME | NUM | INT | FLOAT | BOOL)*
+              | ELSE WS (VAR_NAME | INT | FLOAT | BOOL) (conditional_statements | assignment_operations | ASSIGN | COLON) (VAR_NAME | INT | FLOAT | BOOL)*
+              | ELIF WS (VAR_NAME | INT | FLOAT | BOOL) (conditional_statements | assignment_operations | ASSIGN | COLON) (VAR_NAME | INT | FLOAT | BOOL)*
+              ;
+
+IF : 'if';
+ELSE : 'else';
+ELIF : 'elif';
+COLON: ':';
 
 
 /* Arithmetic Operators */
@@ -64,8 +65,6 @@ MULTIPLY : '*';
 DIVIDE : '/';
 MOD : '%';
 
-
-
 /* Assignment Operators */
 ASSIGN : '=';
 PLUS_EQUAL : '+=';
@@ -74,7 +73,7 @@ MULTI_EQUAL : '*=';
 DIVIDE_EQUAL : '/=';
 MOD_EQUAL : '%=';
 
-/* These 2 aren't due yet for this deliverable */
+/* Conditional Statements */
 EQUAL_EQUAL : '==';
 DOESNOT_EQUAL : '!=';
 LESS_THAN : '<';
