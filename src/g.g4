@@ -48,9 +48,9 @@ conditional_statements :
 
 
 if_else_block : '(' (if_else_block | if_else_block) ')'
-              | 'if(' (VAR_NAME | NUM | INT | FLOAT | BOOL) (conditional_statements | assignment_operations | ASSIGN | COLON) (VAR_NAME | NUM | INT | FLOAT | BOOL)* ')'
-              | 'else(' (VAR_NAME | INT | FLOAT | BOOL) (conditional_statements | assignment_operations | ASSIGN | COLON) (VAR_NAME | INT | FLOAT | BOOL)* ')'
-              | 'else if(' (VAR_NAME | INT | FLOAT | BOOL) (conditional_statements | assignment_operations | ASSIGN | COLON) (VAR_NAME | INT | FLOAT | BOOL)* ')'
+              | 'if(' (VAR_NAME | NUM | INT | FLOAT | BOOL) (conditional_statements | assignment_operations | ASSIGN | COLON) (VAR_NAME | NUM | INT | FLOAT | BOOL)* ')' COLON (block| if_else_block)
+              | 'else(' (VAR_NAME | INT | FLOAT | BOOL) (conditional_statements | assignment_operations | ASSIGN | COLON) (VAR_NAME | INT | FLOAT | BOOL)* ')' COLON block
+              | 'else if(' (VAR_NAME | INT | FLOAT | BOOL) (conditional_statements | assignment_operations | ASSIGN | COLON) (VAR_NAME | INT | FLOAT | BOOL)* ')' COLON block
               ;
 
 while_block : '(' (while_block |  while_block) ')'
@@ -59,6 +59,7 @@ while_block : '(' (while_block |  while_block) ')'
 
 for_block : '(' (for_block |  for_block) ')'
           | 'for(' (VAR_NAME) (conditional_statements) (VAR_NAME | NUM | INT | FLOAT | BOOL)* ')'
+          block
           ;
 
 //IF : 'if';
@@ -99,7 +100,8 @@ OR : 'or';
 VAR_NAME: [a-zA-Z_] [a-zA-Z_0-9]*;
 
 
-block : WS statement* WS ;
+block :   statement*  ;
 
-statement : block | while_block | for_block | arithmetic_operations | assignment_operations | VAR_NAME
+
+statement :  while_block | for_block | arithmetic_operations | assignment_operations | VAR_NAME
 ;
