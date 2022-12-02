@@ -1,5 +1,9 @@
 grammar g;
 
+@lexer::members {
+    public static final int COMMENTS = 1;
+}
+
 // Arithmetic operations rule, allowing parentheses and following order of operations (PEMDAS)
 arithmetic_operations : '(' arithmetic_operations ')'
                       | arithmetic_operations (MULTIPLY|DIVIDE|MOD) arithmetic_operations
@@ -65,6 +69,13 @@ for_block : '(' (for_block |  for_block) ')'
 //IF : 'if';
 //ELSE : 'else';
 //ELIF : 'elif';
+
+comments : (SINGLE_LINE_COMMENT | MULTI_LINE_COMMENT) *
+         ;
+
+SINGLE_LINE_COMMENT : '#' ~[\n\r]* -> channel(1);
+MULTI_LINE_COMMENT : '"""' [.*] '"""' -> channel(1);
+
 COLON: ':';
 
 
@@ -98,6 +109,10 @@ OR : 'or';
 
 /* Variable Names */
 VAR_NAME: [a-zA-Z_] [a-zA-Z_0-9]*;
+
+
+ANYTHING : [.*?];
+ANYTHING_BUT_NEWLINES : ~[\n\r]*;
 
 
 block :   statement*  ;
