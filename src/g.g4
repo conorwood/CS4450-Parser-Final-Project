@@ -12,7 +12,7 @@ arithmetic_operations : '(' arithmetic_operations ')'
                       | VAR_NAME
                       ;
 
-WS  :   [ \t\r\n]+ -> skip ; // Define whitespace rule, toss it out
+//WS  :   [ \t\r\n]+ -> skip ; // Define whitespace rule, toss it out
 TAB : '   '; // tab is 3 spaces
 NUM : [-]?[0-9]*[.]*[0-9]+ ; // Define token INT as one or more digits
 INT : [0-9]+;
@@ -112,11 +112,28 @@ VAR_NAME: [a-zA-Z_] [a-zA-Z_0-9]*;
 
 
 ANYTHING : [.*?];
-ANYTHING_BUT_NEWLINES : ~[\n\r]*;
+//ANYTHING_BUT_NEWLINES : ~[\n\r]*;
 
 
-block :   statement*  ;
+args : (VAR_NAME (',' VAR_NAME)*)
+     ;
 
 
-statement :  while_block | for_block | arithmetic_operations | assignment_operations | VAR_NAME
+call_args : (VAR_NAME (',' VAR_NAME)*)
+          | (NUM (',' NUM)*)
+          | (STRING (',' STRING)*)
+          | (BOOL (',' BOOL)*)
+          ;
+
+function_call : VAR_NAME '(' call_args* ')';
+
+function_declaration : 'def ' VAR_NAME '(' args* '):';
+
+function_block: function_declaration '\n' TAB block*;
+
+block :   statement* '\n' TAB statement*
+      ;
+
+
+statement :  while_block | for_block | arithmetic_operations | assignment_operations | VAR_NAME | function_call
 ;
