@@ -8,8 +8,22 @@ Michael Dillahunty, Conor Wood, Sawyer Seitz
 Our project includes a basic Python parser using ANTLR and Java. The use of ANTLR allows us to implement CFGs to cover basic syntax requirements, including support for things such as arithmetic operators, if/else blocks, conditional statements, while and for loops, comments, and function calls, along with a few other features. These features were implemented in the g.g4 file located in the src directory. When you test the program, you will see the space to input test code and next to it you will see the parse tree.
 
 ## Setup
+In order to run and use this parser, the following are needed: 
+* Java JDK 17.0 or later
+* antlr4 installed on your machine (installation guide found here: https://github.com/antlr/antlr4)
+* The ability to compile/run Java files/projects
+* The .g4 grammar file in this repository 
 
-For the setup, you need the IntelliJ IDE, with a jdk8 package. Once you have both of these, you can open and run IntelliJ and head over to the marketplace where you will then install the latest version of ANTLR's plugin. 
+## How to Use/Run Parser
+To use the parser, first ensure that you have the correct/up-to-date requirements installed. 
+Once your environment is properly configured, follow the following instructions to properly run the parser: 
+* Open a terminal 
+* Make sure that you are in the correct directory where the source files exist (for our project, the proper files are in the /src directory)
+* Run the following commands:
+  * antlr4 g.g4 (this will generate all necessary files from the grammar file)
+  * javac g*.java (this will compile all generated Java files)
+  * grun g <rule-name> -gui (this will run the generated files, and allow you to provide input for the specified rule name, then output a visualization of the parse tree that can be saved as a .png)
+
 
 ### Video Demo Link 
 
