@@ -1,4 +1,4 @@
-// Generated from C:/Users/Conor Wood/Documents/GitHub/CS4450-Parser-Final-Project/src\g.g4 by ANTLR 4.10.1
+// Generated from java-escape by ANTLR 4.11.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -9,6 +9,7 @@ import org.antlr.v4.runtime.tree.TerminalNode;
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
+@SuppressWarnings("CheckReturnValue")
 public class gBaseListener implements gListener {
 	/**
 	 * {@inheritDoc}
@@ -94,6 +95,18 @@ public class gBaseListener implements gListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitComments(gParser.CommentsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArg_types(gParser.Arg_typesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArg_types(gParser.Arg_typesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
