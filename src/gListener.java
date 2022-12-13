@@ -1,4 +1,4 @@
-// Generated from C:/Users/Conor Wood/Documents/GitHub/CS4450-Parser-Final-Project/src\g.g4 by ANTLR 4.10.1
+// Generated from java-escape by ANTLR 4.11.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -76,6 +76,16 @@ public interface gListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitComments(gParser.CommentsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link gParser#arg_types}.
+	 * @param ctx the parse tree
+	 */
+	void enterArg_types(gParser.Arg_typesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link gParser#arg_types}.
+	 * @param ctx the parse tree
+	 */
+	void exitArg_types(gParser.Arg_typesContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link gParser#function_args}.
 	 * @param ctx the parse tree
